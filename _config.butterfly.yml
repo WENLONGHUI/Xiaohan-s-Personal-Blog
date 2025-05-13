@@ -543,7 +543,7 @@ tag_ui: # 留空或 index
 # "#e4f4f6" "#efefef"
 background:
   #【必选】默认背景 
-  default: var(--default-bg)
+  default: URL(/assets/beijing.jpg)
   #【可选】PC端夜间模式背景 
   darkmode: var(--darkmode-bg)
   #【可选】移动端日间默认背景 
