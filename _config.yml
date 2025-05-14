@@ -277,7 +277,7 @@ magnet:
       display_name: 小Fの计算机基础笔记
       icon: 🍼
     - name: 大麦项目
-      display_name: 小Fの博客魔改教程
+      display_name: 小Fの大麦项目笔记
       icon: 🍉
     - name: Java基础
       display_name: 小FのJava基础笔记
@@ -286,8 +286,14 @@ magnet:
       display_name: 小Fの数据库笔记
       icon: 🍨
     - name: 工具
-      display_name: 小Fの案例演示笔记
+      display_name: 小Fの案例工具笔记
       icon: 🍥
+    - name: 八股文
+      display_name: 小Fの案例八股文笔记
+      icon: 🍡
+    - name: 框架
+      display_name: 小Fの案例框架笔记
+      icon: 🍼
   color_setting:
     text_color: black # 文字默认颜色
     text_hover_color: white # 文字鼠标悬浮颜色
