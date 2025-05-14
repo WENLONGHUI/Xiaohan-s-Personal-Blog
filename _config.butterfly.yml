@@ -1,7 +1,4 @@
-# Main menu navigation (導航目錄)
-# see https://butterfly.js.org/posts/4aa8abbe/#導航菜單
-# --------------------------------------
-
+#导航栏
 menu:
   首页: / || icon-home || faa-tada
   文章 || icon--article || faa-tada || hide:
@@ -29,9 +26,7 @@ menu:
     恋爱小屋: /personal/love/ || icon-love-sign || faa-tada
     关于: /personal/about/ || icon-paperplane || faa-tada
 
-# Code Blocks (代碼相關)
-# --------------------------------------
-
+#主题中关于代码块显示的配置详解
 highlight_theme: mac #  darker / pale night / light / ocean / mac / mac light / false
 highlight_copy: true # copy button
 highlight_lang: true # show the code language
@@ -39,17 +34,17 @@ highlight_shrink: false # true: shrink the code blocks / false: expand the code 
 highlight_height_limit: 230 # unit: px
 code_word_wrap: false
 
-# copy settings
-# copyright: Add the copyright information after copied content (複製的內容後面加上版權信息)
+# (複製的內容後面加上版權信息)
 copy:
-  enable: true
-  copyright:
-    enable: false
-    limit_count: 50
+  enable: true # true: 允许复制文本/代码  false: 禁用所有复制操作
+  copyright: 
+    enable: false # false: 不添加任何信息  true: 用户复制内容时，自动在剪贴板末尾添加版权信息
+    limit_count: 50 #仅当复制内容长度 超过此值 时，才会追加版权信息
 
-# social settings (社交圖標設置)
-# formal:
-#   icon: link || the description
+
+# Hexo Butterfly 主题中 社交图标配置
+# 社交名称: 链接地址 || 图标类名 || 悬停动画效果
+# 悬停动画效果： faa-tada	摆动、faa-wrench	旋转、faa-vertical	上下浮动、faa-burst	脉冲、
 social:
   # Github: https://github.com/fomalhaut1998 || icon-github || faa-tada
   微信: /assets/QRCode.jpg || icon-weixin || faa-tada
@@ -68,111 +63,119 @@ social:
   # iconfont icon-weibo: https://weibo.com/u/6473136435 || 微博
   # iconfont icon-shejiaotubiao-46: https://www.zhihu.com/people/liang-jia-chao-19 || 知乎
 
-# search (搜索)
-# see https://butterfly.js.org/posts/ceeb73f/#搜索系統
-# --------------------------------------
-
-# Algolia search
+# Algolia Search在Hexo的Butterfly主题中属于站内搜索功能配置模块23。该配置段主要用于控制搜索引擎的交互界面和基础参数
 algolia_search:
-  enable: false
+  enable: false   # 功能开关
   hits:
-    per_page: 5
+    per_page: 5   # 每页展示搜索结果数量
   labels:
-    input_placeholder: Search for Posts
-    hits_empty: "我们没有找到任何搜索结果: ${query}"
-    hits_stats: "找到${hits}条结果（用时${time} ms）"
+    input_placeholder: Search for Posts   # 搜索框占位符
+    hits_empty: "我们没有找到任何搜索结果: ${query}"     # 空结果提示
+    hits_stats: "找到${hits}条结果（用时${time} ms）"     # 搜索结果统计
 
-# Local search
+
+# 在Butterfly主题配置中，Local Search模块用于配置本地搜索功能
 local_search:
-  enable: true
-  preload: true
-  CDN:
+  enable: true   # 启用本地搜索功能（需配合hexo-generator-search插件）:ml-citation{ref="4,5" data="citationList"}
+  preload: true  # 预加载搜索索引提升体验（首次加载会增大资源体积）
+  CDN:  # 自定义搜索组件CDN地址（留空使用主题默认资源）
 
-# Math (數學)
-# --------------------------------------
-# About the per_page
-# if you set it to true, it will load mathjax/katex script in each page (true 表示每一頁都加載js)
-# if you set it to false, it will load mathjax/katex script according to your setting (add the 'mathjax: true' in page's front-matter)
-# (false 需要時加載，須在使用的 Markdown Front-matter 加上 mathjax: true)
-
-# katex:
-#   enable: true # true 表示每一页都加载katex.js # false 需要时加载，须在使用的Markdown Front-matter 加上katex: true
-#   per_page: false
-#   hide_scrollbar: true
-
+# 在Hexo项目中使用Butterfly主题时，对数学公式渲染插件MathJax的设置。
 mathjax:
-  enable: true
-  per_page: false
-  cdn: https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+  enable: true   # 启用MathJax插件，用于数学公式的渲染
+  per_page: false # 此选项通常用于控制某些功能是否针对每页单独设置，但MathJax的配置中此选项可能不直接相关或已被废弃，具体需参考Butterfly主题的文档
+  cdn: https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML  # 指定MathJax库的CDN地址，用于加载MathJax脚本
 
 # Image (圖片設置)
 # --------------------------------------
 
-# Favicon（網站圖標）
+# favicon用于设置网站的图标
 favicon:
 
-# Avatar (頭像)
+# avatar部分用于设置网站或作者头像的相关选项。
 avatar:
-  img: https://tuchuang.voooe.cn/images/2023/01/02/avatar.webp
-  effect: false
+  img: https://tuchuang.voooe.cn/images/2023/01/02/avatar.webp  # 头像图片的URL地址
+  effect: false       # 是否启用头像特效
 
-# Disable all banner image
-disable_top_img: false
+# 全局横幅控制
+disable_top_img: false # 是否禁用所有页面横幅，false表示不禁用（默认显示）
 
-# The banner image of home page
-index_img:
+# 首页横幅
+index_img:   # 首页自定义横幅图片URL（留空则使用默认图片）
 
-# If the banner of page not setting, it will show the top_img
-default_top_img:
+# 默认横幅（后备图片）
+default_top_img:   # 当其他页面未单独设置横幅时，默认使用的图片URL
 
-# The banner image of archive page
-archive_img:
+# 归档页横幅
+archive_img:   # 归档页面自定义横幅图片URL
 
-# If the banner of tag page not setting, it will show the top_img
-# note: tag page, not tags page (子標籤頁面的 top_img)
-tag_img: false
+# 标签页横幅控制
+tag_img: false  # 是否禁用标签页横幅，false表示不禁用（会显示default_top_img）
 
-# The banner image of tag page
-# format:
-#  - tag name: xxxxx
-tag_per_img:
+# 按标签名单独设置横幅
+tag_per_img:   # 为特定标签设置独立横幅
+  # - 标签名1: URL1      # 格式示例
+  # - 标签名2: URL2
 
-# If the banner of category page not setting, it will show the top_img
-# note: category page, not categories page (子分類頁面的 top_img)
-category_img:
+# 分类页全局默认横幅
+category_img: # 未设置时会显示default_top_img的内容
 
-# The banner image of category page
-# format:
-#  - category name: xxxxx
+# 按分类名称单独设置横幅
 category_per_img:
+  # - 技术类: /img/tech-banner.jpg  # 格式示例
+  # - 生活类: https://example.com/life-banner.webp
 
+
+# 文章封面配置说明（Markdown格式）
 cover:
-  # display the cover or not (是否顯示文章封面)
-  index_enable: true
-  aside_enable: true
-  archives_enable: true
-  # the position of cover in home page (封面顯示的位置)
-  # left/right/both
-  position: both
-  # When cover is not set, the default cover is displayed (當沒有設置cover時，默認的封面顯示)
+  # 是否显示封面（全局开关）
+  index_enable: true  # 首页是否显示文章封面
+  aside_enable: true  # 侧边栏是否显示文章封面 
+  archives_enable: true  # 归档页是否显示文章封面
+
+  # 封面显示位置（仅对首页生效）
+  # 可选值: left/right/both
+  position: both  # 封面在首页的显示位置
+
+
+  # 默认封面配置（当文章未单独设置封面时使用）
   default_cover:
     - https://source.fomal.cc/img/default_cover_14.webp
-    # ...
+    # - /vika-proxy/space/2025/05/14/c2dc218e9ab047ebbca85a4cf3c11cae
+    # - /vika-proxy/space/2025/05/13/94ac562f0bf04c83be6cd79df7da9f08
+    # - /vika-proxy/space/2025/05/14/40879d412eac466dbf2ee77f779d0bf6
+    # - /vika-proxy/space/2025/05/14/05fdffcc31d443d99bdc00f5f4760cf4
+    # - /vika-proxy/space/2025/05/14/c97e95c908834a47ba501bbf0f462adc
+    # - /vika-proxy/space/2025/05/14/a196b4ce06454a4f97c87a27b8aea0ea
+    # - /vika-proxy/space/2025/05/14/3e4c2a516a6b447390c13ea0a16af5d4
+    # ... 可设置多个备选
 
-# A simple 404 page
+# 页面配置
 error_404:
+  # 是否启用自定义页面
   enable: true
-  subtitle: "此页面不存在哦٩͡[๏̯͡๏]"
-  # https://i.loli.net/2020/05/19/aKOcLiyPl2JQdFD.png
-  background: /assets/404_1.jpg
 
+  # 页面的副标题
+  # 可根据喜好修改，以提供友好的错误提示
+  subtitle: "此页面不存在哦٩͡[๏̯͡๏]"
+
+  # 页面的背景图片
+  # 支持本地路径（相对于source目录）或网络URL
+  # 示例使用本地图片
+  background: /assets/404_1.jpg
+  # 若要使用网络图片，可替换为如下格式：
+  # background: https://i.loli.net////aKOcLiyPlJQdFD.png
+
+# Butterfly主题文章元数据配置
 post_meta:
-  page: # Home Page
-    date_type: both # created or updated or both 主頁文章日期是創建日或者更新日或都顯示
-    date_format: relative # date/relative 顯示日期還是相對日期
-    categories: true # true or false 主頁是否顯示分類
-    tags: true # true or false 主頁是否顯示標籤
-    label: true # true or false 顯示描述性文字
+  page: # 首页文章元数据配置
+    date_type: both  # 日期显示类型: created/updated/both
+    date_format: relative  # 日期格式: date(绝对日期)/relative(相对日期)
+    categories: true  # 是否显示分类
+    tags: true    # 是否显示标签
+    label: true  # 是否显示描述文字
+
+  # 文章页元数据配置  
   post:
     date_type: both # created or updated or both 文章頁日期是創建日或者更新日或都顯示
     date_format: relative # date/relative 顯示日期還是相對日期
@@ -188,165 +191,154 @@ wordcount:
   min2read: true
   total_wordcount: true
 
-# Display the article introduction on homepage
-# 1: description
-# 2: both (if the description exists, it will show description, or show the auto_excerpt)
-# 3: auto_excerpt (default)
-# false: do not show the article introduction
+# 文章首页显示设置
 index_post_content:
-  method: 2
-  length: 500 # if you set method to 2 or 3, the length need to config
+  method: 2 # 显示方式设置
+  length: 500  # 当 method 设置为 2 或  时，需要配置摘要长度
 
-# anchor
-# when you scroll in post, the URL will update according to header id.
-anchor: false
+# 文章锚点设置
+anchor: false # 禁用文章锚点功能
 
 # Post
 # --------------------------------------
 
-# toc (目錄)
+# 文章内容设置
 toc:
-  post: true
-  page: false
-  number: false
-  expand: false
-  style_simple: true # for post
+  post: true # 文章页启用目录
+  page: false  # 首页不启用目录
+  number: false  # 目录项不编号
+  expand: false  # 目录默认不展开
+  style_simple: true # 文章页使用简洁目录样式
 
 post_copyright:
-  enable: true
-  decode: true
-  author_href:
-  license: CC BY-NC-SA 4.0
-  license_url: https://creativecommons.org/licenses/by-nc-sa/4.0/
+  enable: true  # 启用版权信息
+  decode: true  # 对版权信息进行 HTML 解码（如有需要）
+  author_href:  # 作者链接（留空则不显示链接）
+  license: CC BY-NC-SA 4.0  # 使用的版权许可协议
+  license_url: https://creativecommons.org/licenses/by-nc-sa/4.0/  # 版权许可协议链接
 
-# Sponsor/reward
+# 打赏功能配置（reward）
 reward:
-  enable: true
-  coinAudio: https://npm.elemecdn.com/akilar-candyassets@1.0.36/audio/aowu.m4a
+  enable: true # 启用打赏功能
+  coinAudio: https://npm.elemecdn.com/akilar-candyassets@1.0.36/audio/aowu.m4a  # 硬币音效
   QR_code:
-    - img: https://tuchuang.voooe.cn/images/2023/01/04/2.webp
-      link:
-      text: 微信
-    - img: https://tuchuang.voooe.cn/images/2023/01/04/20f8e49805975b8f8.webp
+    - img: https://tuchuang.voooe.cn/images/2023/01/04/2.webp  # 微信收款码
+      link:   # 可添加跳转链接
+      text: 微信  # 文字说明
+    - img: https://tuchuang.voooe.cn/images/2023/01/04/20f8e49805975b8f8.webp  # 支付宝收款码
       link:
       text: 支付宝
 
-# Post edit
-# Easily browse and edit blog source code online.
+# 在线编辑功能
 post_edit:
-  enable: false
+  enable: false # 默认禁用
+  # 示例格式：https://github.com/用户名/仓库名/edit/分支名/子目录/
   # url: https://github.com/user-name/repo-name/edit/branch-name/subdirectory-name/
   # For example: https://github.com/jerryc127/butterfly.js.org/edit/main/source/
   url:
 
-# Related Articles
+# 相关文章推荐 (Related Post)
 related_post:
-  enable: true
-  limit: 6 # Number of posts displayed
-  date_type: updated # or created or updated 文章日期顯示創建日或者更新日
+  enable: true  # 启用相关文章
+  limit: 6      # 显示6篇相关文章
+  date_type: updated # 显示更新时间
 
-# figcaption (圖片描述文字)
+# 图片描述功能 (Photofigcaption)
 photofigcaption: false
 
-# post_pagination (分頁)
-# value: 1 || 2 || false
-# 1: The 'next post' will link to old post
-# 2: The 'next post' will link to new post
-# false: disable pagination
-post_pagination: 1
+# 文章分页设置（post_pagination）
+post_pagination: 1 # 分页模式选择
+# 可选值：
+# 1 - 下一篇链接指向更旧的文章（传统博客顺序）
+# 2 - 下一篇链接指向更新的文章（倒序展示）
+# false - 完全禁用分页功能
 
-# Displays outdated notice for a post (文章過期提醒)
+# 文章过期提醒
 noticeOutdate:
-  enable: true
-  style: flat # style: simple/flat
-  limit_day: 365 # When will it be shown
-  position: top # position: top/bottom
+  enable: true   # 启用过期提醒
+  style: flat    # 扁平化样式
+  limit_day: 365 # 365天后显示提醒
+  position: top  # 显示在文章顶部
   message_prev: It has been
   message_next: days since the last update, the content of the article may be outdated.
 
 # Share System (分享功能)
 # --------------------------------------
 
-# AddThis
+# AddThis (需注册获取pubid)
 # https://www.addthis.com/
 addThis:
   enable: false
   pubid:
 
-# Share.js
+# Share.js (轻量级方案)
 # https://github.com/overtrue/share.js
 sharejs:
   enable: false
   sites: facebook,twitter,wechat,weibo,qq
 
-# AddToAny
+# AddToAny (功能最全)
 # https://www.addtoany.com/
 addtoany:
   enable: false
   item: facebook,twitter,wechat,sina_weibo,facebook_messenger,email,copy_link
 
-# Comments System
-# --------------------------------------
-
+# 核心评论配置 (comments)
 comments:
-  # Up to two comments system, the first will be shown as default
-  # Choose: Disqus/Disqusjs/Livere/Gitalk/Valine/Waline/Utterances/Facebook Comments/Twikoo/Giscus/Remark42
-  use:
-    - Twikoo # Valine,Disqus,...
-  text: true # Display the comment name next to the button
-  # lazyload: The comment system will be load when comment element enters the browser's viewport.
-  # If you set it to true, the comment count will be invalid
-  lazyload: true
-  count: false # Display comment count in post's top_img
-  card_post_count: false # Display comment count in Home Page
 
-# disqus
+  use:
+    - Twikoo # 主评论系统
+    # - Valine  # 可添加第二评论系统
+  text: true # 显示评论系统名称
+  lazyload: true # 启用懒加载
+  count: false # 文章头图不显示评论数
+  card_post_count: false # 首页卡片不显示评论数
+
+# Disqus 传统配置
 # https://disqus.com/
 disqus:
-  # fomalhaut1998
-  shortname:
-  apikey: # For newest comments widget
+  shortname: # 必填(注册获取)
+  apikey:    # 最新评论组件所需
 
-# Alternative Disqus - Render comments with Disqus API
-# DisqusJS 評論系統，可以實現在網路審查地區載入 Disqus 評論列表，兼容原版
+# DisqusJS 替代方案
 # https://github.com/SukkaW/DisqusJS
 disqusjs:
-  shortname:
-  apikey:
-  option:
+  shortname: # 同Disqus配置
+  apikey:    # 同Disqus配置
+  option:    # 高级配置项
 
-# livere (來必力)
+# 来必力(Livere)配置
 # https://www.livere.com/
 livere:
-  uid: # MTAyMC81NzAyNy8zMzQ5MQ==
+  uid: # MTAyMC81NzAyNy8zMzQ5MQ==  # 需替换为实际UID
 
-# gitalk
+# Gitalk配置
 # https://github.com/gitalk/gitalk
 gitalk:
-  client_id:
-  client_secret:
-  repo:
-  owner:
-  admin:
-  option:
+  client_id:      # GitHub OAuth App ID
+  client_secret:   # GitHub OAuth App Secret
+  repo:           # 存储评论的仓库名
+  owner:        # GitHub用户名
+  admin:        # 管理员账号
+  option:       # 高级配置
 
-# valine
+# Valine配置
 # https://valine.js.org
 valine:
-  appId: # leancloud application app id
-  appKey: # leancloud application app key
-  avatar: monsterid # gravatar style https://valine.js.org/#/avatar
-  serverURLs: # This configuration is suitable for domestic custom domain name users, overseas version will be automatically detected (no need to manually fill in)
-  bg: # valine background
-  visitor: false
-  option:
+  appId: # LeanCloud应用ID
+  appKey: # LeanCloud应用Key
+  avatar: monsterid # 头像风格
+  serverURLs: # 国内自定义域名
+  bg: # 背景图URL
+  visitor: false     # 访问量统计
+  option:  # 扩展配置
 
-# waline - A simple comment system with backend support fork from Valine
+# Waline配置
 # https://waline.js.org/
 waline:
-  serverURL:
-  bg:
-  pageview: false
+  serverURL: # 服务端地址
+  bg:      # 背景配置
+  pageview: false   # 页面访问统计
   option:
     # pageSize: 10
     # requiredFields: mail
@@ -500,29 +492,24 @@ site_verification:
   # - name: baidu-site-verification
   #   content: xxxxxxx
 
-# Beautify/Effect (美化/效果)
-# --------------------------------------
-
-# Theme color for customize
-# Notice: color value must in double quotes like "#000" or may cause error!
-
+# 核心颜色配置 (theme_color)
 theme_color:
-  enable: true
-  main: # "#49b1f5"
-  paginator: # "#49b1f5"
-  button_hover: # "#FF7242"
-  text_selection: # "#49b1f5" # "#00c4b6"
-  link_color: "#a591e0"
-  meta_color: "#858585"
-  hr_color: "#A4D8FA"
-  code_foreground: # "#F47466"
-  code_background: # "rgba(27, 31, 35, .05)"
-  toc_color: # "#49b1f5" # "#00c4b6"
-  blockquote_padding_color: # "#49b1f5"
-  blockquote_background_color: # "#49b1f5"
-  scrollbar_color: # "#49b1f5"
-  meta_theme_color_light: "ffffff"
-  meta_theme_color_dark: "#0d0d0d"
+  enable: true                                   # 启用主题色系统
+  main: # "#49b1f5"                              # 主色调
+  paginator: # "#49b1f5"                         # 分页器颜色
+  button_hover: # "#FF7242"                      # 按钮悬停色
+  text_selection: # "#49b1f5" # "#00c4b6"        # 文本选中色
+  link_color: "#a591e0"                          # 链接颜色
+  meta_color: "#858585"                          # 元信息颜色
+  hr_color: "#A4D8FA"                            # 水平线颜色             
+  code_foreground: # "#F47466"                   # 代码前景色
+  code_background: # "rgba(27, 31, 35, .05)"     # 代码背景色
+  toc_color: # "#49b1f5" # "#00c4b6"             # 目录颜色
+  blockquote_padding_color: # "#49b1f5"          # 引用框边线色
+  blockquote_background_color: # "#49b1f5"       # 引用框背景色
+  scrollbar_color: # "#49b1f5"                   # 滚动条颜色
+  meta_theme_color_light: "ffffff"               # 浅色模式主题色
+  meta_theme_color_dark: "#0d0d0d"               # 深色模式主题色
 
 # The top_img settings of home page
 # default: top img - full screen, site info - middle (默認top_img全屏，site_info在中間)
@@ -537,10 +524,8 @@ index_top_img_height:
 category_ui: # 留空或 index
 tag_ui: # 留空或 index
 
-# Website Background (設置網站背景)
-# can set it to color or image (可設置圖片 或者 顔色)
-# The formal of image: url(http://xxxxxx.com/xxx.jpg)
-# "#e4f4f6" "#efefef"
+
+# Website Background Settings (网站背景设置)
 background:
   #【必选】默认背景 
   default: url(/vika-proxy/space/2025/05/13/94ac562f0bf04c83be6cd79df7da9f08)
@@ -551,89 +536,91 @@ background:
   #【可选】移动端夜间模式背景 
   mobilenight: var(--mobilenight-bg)
 
-# Footer Background
-footer_bg: false
 
-# the position of bottom right button/default unit: px (右下角按鈕距離底部的距離/默認單位為px)
+# 页脚背景设置
+footer_bg: false #不启用页脚背景，保持默认样式或透明。
+
+
+# 右下角按钮位置设置
 rightside-bottom:
 
-# Enter transitions (開啓網頁進入效果)
-enter_transitions: true
+# 网页进入效果设置
+enter_transitions: true #true：启用动画效果，提升用户体验。
 
 # Background effects (背景特效)
 # --------------------------------------
 
-# canvas_ribbon (靜止彩帶背景)
+# 静止彩带背景（Canvas Ribbon）
 # See: https://github.com/hustcc/ribbon.js
 canvas_ribbon:
-  enable: false
-  size: 150
-  alpha: 0.6
-  zIndex: -1
-  click_to_change: false
-  mobile: false
+  enable: false #用于设置是否启用静止彩带背景。
+  size: 150      #彩带的宽度（单位：px），默认值为``。
+  alpha: 0.6     #彩带的透明度，取值范围为（完全透明）到（完全不透明），默认值为.。
+  zIndex: -1      #彩带的堆叠顺序，默认值为-，确保彩带位于其他内容下方。
+  click_to_change: false   #是否启用点击更换彩带颜色的功能。
+  mobile: false       #是否在移动端显示彩带。
 
-# Fluttering Ribbon (動態彩帶)
+
+# 动态彩带效果 (Fluttering Ribbon)
 canvas_fluttering_ribbon:
-  enable: false
-  mobile: false
+  enable: false # 禁用动态彩带
+  mobile: false # 移动端不显示
 
-# canvas_nest
+# 网状背景效果 (Canvas Nest)
 # https://github.com/hustcc/canvas-nest.js
 canvas_nest:
   enable: false
-  color: "0,0,255" #color of lines, default: '0,0,0'; RGB values: (R,G,B).(note: use ',' to separate.)
-  opacity: 0.7 # the opacity of line (0~1), default: 0.5.
-  zIndex: -1 # z-index property of the background, default: -1.
-  count: 30 # the number of lines, default: 99.
-  mobile: false
+  color: "0,0,255" # 蓝色线条(RGB)
+  opacity: 0.7 # 线条透明度
+  zIndex: -1 # 背景层叠顺序
+  count: 30  # 线条数量
+  mobile: false # 移动端禁用
 
-# Typewriter Effect (打字效果)
+# 打字机效果
 # https://github.com/disjukr/activate-power-mode
 activate_power_mode:
   enable: false
-  colorful: true # open particle animation (冒光特效)
-  shake: true #  open shake (抖動特效)
+  colorful: true # 粒子光效
+  shake: true    # 抖动效果 
   mobile: false
 
-# Mouse click effects: fireworks (鼠標點擊效果: 煙火特效)
+# 鼠标点击特效
 fireworks:
   enable: false
-  zIndex: 9999 # -1 or 9999
+  zIndex: 9999 # 确保显示在最上层
   mobile: false
 
-# Mouse click effects: Heart symbol (鼠標點擊效果: 愛心)
+# 爱心效果  
 click_heart:
   enable: false
   mobile: false
 
-# Mouse click effects: words (鼠標點擊效果: 文字)
+# 文字弹出效果
 ClickShowText:
   enable: false
-  text:
+  text:  # 可自定义文字列表
     # - I
     # - LOVE
     # - YOU
   fontSize: 15px
-  random: false
+  random: false  # 是否随机显示
   mobile: false
 
-# Default display mode (網站默認的顯示模式)
-# light (default) / dark
-display_mode: light
+# 显示模式设置
+display_mode: light  # 默认浅色模式
 
-# Beautify (美化頁面顯示)
+
+# 页面美化设置（beautify）
 beautify:
-  enable: true
-  field: site # site/post
-  title-prefix-icon: '\f863' # '\f0c1'
-  title-prefix-icon-color: "#F47466" # '#F47466'
+  enable: true # 启用美化功能
+  field: site  # 作用范围：site(全站)/post(文章页)
+  title-prefix-icon: '\f863' # 标题前缀图标(FontAwesome编码)
+  title-prefix-icon-color: "#F47466" # 图标颜色
 
-# Global font settings
-# Don't modify the following settings unless you know how they work (非必要不要修改)
+# 全局字体设置
 font:
-  global-font-size: 15.5px
-  code-font-size: 14.5px
+  global-font-size: 15.5px  # 正文字号
+  code-font-size: 14.5px    # 代码字号
   # -apple-system, BlinkMacSystemFont, "Segoe UI" , "Helvetica Neue" , Lato, Roboto, "PingFang SC" , "Microsoft JhengHei" , "Microsoft YaHei" , sans-serif
   # Wenkai, consolas, -apple-system, 'Quicksand', 'Nimbus Roman No9 L', 'PingFang SC', 'Hiragino Sans GB', 'Noto Serif SC', 'Microsoft Yahei', 'WenQuanYi Micro Hei', 'ST Heiti', sans-serif;
   font-family: var(--global-font), -apple-system, 'Quicksand', 'Nimbus Roman No9 L', 'PingFang SC', 'Hiragino Sans GB', 'Noto Serif SC', 'Microsoft Yahei', 'WenQuanYi Micro Hei', 'ST Heiti', sans-serif;
@@ -644,65 +631,64 @@ font:
 # Font settings for the site title and site subtitle
 # https://fonts.googleapis.com/css?family=Titillium+Web&display=swap
 # Titillium Web, 'PingFang SC' , 'Hiragino Sans GB' , 'Microsoft JhengHei' , 'Microsoft YaHei' , sans-serif
+
 # 左上角網站名字 主頁居中網站名字
 blog_title_font:
-  font_link:
-  font-family: var(--global-font)
+  font_link:            # 可填入Google Fonts链接
+  font-family: var(--global-font)    # 继承全局设置
 
-# The setting of divider icon (水平分隔線圖標設置)
+# 分隔线装饰
 hr_icon:
-  enable: true
-  icon: '\f2dc' # the unicode value of Font Awesome icon, such as '\3423'
-  icon-top: -10px
+  enable: true      # 启用分隔线图标
+  icon: '\f2dc'     # FontAwesome图标代码
+  icon-top: -10px   # 垂直偏移量(负值上移)
 
-# the subtitle on homepage (主頁subtitle)
+# Butterfly 主题副标题配置指南
 subtitle:
-  enable: true
-  # Typewriter Effect (打字效果)
-  effect: true
-  # loop (循環打字)
-  loop: true
+  enable: true   # 启用副标题功能
+  effect: true   # 启用打字机动画效果
+  loop: true     # 开启循环播放
   # source 調用第三方服務
   # source: false 關閉調用
   # source: 1  調用一言網的一句話（簡體） https://hitokoto.cn/
   # source: 2  調用一句網（簡體） http://yijuzhan.com/
   # source: 3  調用今日詩詞（簡體） https://www.jinrishici.com/
   # subtitle 會先顯示 source , 再顯示 sub 的內容
-  source: false
+  source: false   # 第三方API调用开关
   # 如果關閉打字效果，subtitle 只會顯示 sub 的第一行文字
-  sub:
+  sub:   # 自定义文本内容
     - "Welcome to Fomalhaut🥝のTiny Home!🤣🤣🤣"
     - "Hope you have a nice day!🍭🍭🍭"
 
-# Loading Animation (加載動畫)
-# preloader: false
+
+# Butterfly 主题加载动画配置指南
 preloader:
-  enable: true # true|false
-  load_color: # '#37474f'
-  load_style: heo # default|gear|ironheart|scarecrow|triangles|wizard|image|spincat|heo(新增)
-  load_image: # url
+  enable: true  # 启用加载动画
+  load_color: # '#37474f'  # 加载器颜色(HEX格式)
+  load_style: heo # default|gear|ironheart|scarecrow|triangles|wizard|image|spincat|heo(新增)  # 动画样式选择
+  load_image: # url    # 自定义图片URL(留空则使用内置样式)
 
-# aside (側邊欄)
-# --------------------------------------
-
+# Butterfly 主题侧边栏配置优化指南
 aside:
-  enable: true
-  hide: false
-  button: true
-  mobile: true # display on mobile
-  position: right # left or right
-  display:
-    archive: true
-    tag: true
-    category: true
-  card_author:
+  enable: true  # 总开关
+  hide: false   # 初始隐藏状态
+  button: true  # 显示折叠按钮
+  mobile: true  # 移动端适配
+  position: right  # 定位方向(left/right)
+  display:      # 内容筛选
+    archive: true   # 归档目录
+    tag: true     # 标签云
+    category: true   # 分类树
+  card_author:       # 作者名片
     enable: true
-    description:
-    button:
+    description:     # 个性签名(支持HTML)
+    button:          # 行动按钮
       enable: true
-      icon: # fab fa-github
-      text: 前往小窝
-      link: https://github.com/fomalhaut1998
+      icon: # fab fa-github   # FontAwesome图标代码
+      text: 前往小窝     # 按钮文字
+      link: https://github.com/fomalhaut1998     # 跳转链接
+
+  # 公告板    
   card_announcement:
     enable: true
     content: <center><b>--- 主域名 ---<br><a href="https://www.fomal.cc" title="此线路部署于Vercel" class="anno_content"><font color="#5ea6e5">fomal.cc</font></a>&nbsp;|&nbsp;<a href="https://www.fomal.cn" title="此线路部署于Vercel" class="anno_content"><font color="#5ea6e5">fomal.cn</font></a><br>--- 备用域名 ---<br><a href="https://netlify.fomal.cc" title="此线路部署于Netlify" class="anno_content"><font color="#5ea6e5">netlify.fomal.cc</font></a><br><a href="https://cloudflare.fomal.cc" title="此线路部署于Cloudflare" class="anno_content"><font color="#5ea6e5">cloudflare.fomal.cc</font></a><br>--- 网站安卓APP ---<br>🍧<a href="https://lskypro.acozycotage.net/Fomalhaut/Fomalhaut.apk" title="点这里可以下载网站的安卓APP" class="anno_content"><font color="#5ea6e5">点此下载</font></a>🍧</b></center>
@@ -735,9 +721,9 @@ aside:
     sort_order: # Don't modify the setting unless you know how it works
   card_weibo:
     enable: false
-  card_friend_link: #友链通讯录
+  card_friend_link: # 友链通讯录
     enable: true
-    sort_order: # Don't modify the setting unless you know
+    sort_order:     # 排序规则
 
 # busuanzi count for PV / UV in site
 # 訪問人數
@@ -884,13 +870,13 @@ lazyload:
 # See https://github.com/JLHwung/hexo-offline
 # ---------------
 pwa:
-  enable: false
-  manifest: /manifest.json
-  theme_color: var(--theme-color)
-  apple_touch_icon: /assets/gulp/siteicon/128.png
-  favicon_32_32: /assets/gulp/siteicon/32.png
-  favicon_16_16: /assets/gulp/siteicon/16.png
-  mask_icon: /assets/gulp/siteicon/128.png
+  enable: false   # PWA功能总开关
+  manifest: /manifest.json  # 清单文件路径
+  theme_color: var(--theme-color)  # 主题色(CSS变量)
+  apple_touch_icon: /assets/gulp/siteicon/128.png   # iOS主屏图标
+  favicon_32_32: /assets/gulp/siteicon/32.png       # 32px标准图标
+  favicon_16_16: /assets/gulp/siteicon/16.png       # 16px标准图标
+  mask_icon: /assets/gulp/siteicon/128.png          # Safari标签页图标
 
 # Open graph meta tags
 # https://developers.facebook.com/docs/sharing/webmasters/
@@ -1006,12 +992,12 @@ CDN:
     coin_js: /js/coin.js
     coin_css: /css/coin.css
 
-# wowjs动画特效
+# Butterfly 主题 WOW.js 动画配置
 # see https://www.npmjs.com/package/hexo-butterfly-wowjs
 wowjs:
-  enable: true #控制动画开关。true是打开，false是关闭
-  priority: 10 #过滤器优先级
-  mobile: false #移动端是否启用，默认移动端禁用
+  enable: true  #控制动画开关。true是打开，false是关闭
+  priority: 10  #过滤器执行优先级(数字越大越晚执行)
+  mobile: false #移动端禁用(节省性能)
   animateitem:
     - class: recent-post-item #必填项，需要添加动画的元素的class
       style: animate__zoomIn # animate__zoomIn #必填项，需要添加的动画
@@ -1063,9 +1049,9 @@ wowjs:
     # - class: site-card
     #   style: animate__animated
     #   duration: 3s
-  animate_css: https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/animate.min.css
-  wow_js: https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/wow.min.js
-  wow_init_js: https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/wow_init.js
+  animate_css: https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/animate.min.css   #"CDN链接" # Animate.css库地址
+  wow_js: https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/wow.min.js             #"CDN链接"     # WOW.js库地址
+  wow_init_js: https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/wow_init.js       #"初始化脚本"
 
 # 留言板
 # envelope_comment

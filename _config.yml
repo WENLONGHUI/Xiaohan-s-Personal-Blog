@@ -285,7 +285,7 @@ magnet:
     - name: 数据库
       display_name: 小Fの数据库笔记
       icon: 🍨
-    - name: 演示
+    - name: 工具
       display_name: 小Fの案例演示笔记
       icon: 🍥
   color_setting:
