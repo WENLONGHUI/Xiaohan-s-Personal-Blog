@@ -141,13 +141,13 @@ cover:
   # 默认封面配置（当文章未单独设置封面时使用）
   default_cover:
     - https://source.fomal.cc/img/default_cover_14.webp
-    # - /vika-proxy/space/2025/05/14/c2dc218e9ab047ebbca85a4cf3c11cae
-    # - /vika-proxy/space/2025/05/13/94ac562f0bf04c83be6cd79df7da9f08
-    # - /vika-proxy/space/2025/05/14/40879d412eac466dbf2ee77f779d0bf6
-    # - /vika-proxy/space/2025/05/14/05fdffcc31d443d99bdc00f5f4760cf4
-    # - /vika-proxy/space/2025/05/14/c97e95c908834a47ba501bbf0f462adc
-    # - /vika-proxy/space/2025/05/14/a196b4ce06454a4f97c87a27b8aea0ea
-    # - /vika-proxy/space/2025/05/14/3e4c2a516a6b447390c13ea0a16af5d4
+    - /vika-proxy/space/2025/05/14/c2dc218e9ab047ebbca85a4cf3c11cae
+    - /vika-proxy/space/2025/05/13/94ac562f0bf04c83be6cd79df7da9f08
+    - /vika-proxy/space/2025/05/14/40879d412eac466dbf2ee77f779d0bf6
+    - /vika-proxy/space/2025/05/14/05fdffcc31d443d99bdc00f5f4760cf4
+    - /vika-proxy/space/2025/05/14/c97e95c908834a47ba501bbf0f462adc
+    - /vika-proxy/space/2025/05/14/a196b4ce06454a4f97c87a27b8aea0ea
+    - /vika-proxy/space/2025/05/14/3e4c2a516a6b447390c13ea0a16af5d4
     # ... 可设置多个备选
 
 # 页面配置
@@ -691,7 +691,7 @@ aside:
   # 公告板    
   card_announcement:
     enable: true
-    content: <center><b>--- 主域名 ---<br><a href="https://www.fomal.cc" title="此线路部署于Vercel" class="anno_content"><font color="#5ea6e5">fomal.cc</font></a>&nbsp;|&nbsp;<a href="https://www.fomal.cn" title="此线路部署于Vercel" class="anno_content"><font color="#5ea6e5">fomal.cn</font></a><br>--- 备用域名 ---<br><a href="https://netlify.fomal.cc" title="此线路部署于Netlify" class="anno_content"><font color="#5ea6e5">netlify.fomal.cc</font></a><br><a href="https://cloudflare.fomal.cc" title="此线路部署于Cloudflare" class="anno_content"><font color="#5ea6e5">cloudflare.fomal.cc</font></a><br>--- 网站安卓APP ---<br>🍧<a href="https://lskypro.acozycotage.net/Fomalhaut/Fomalhaut.apk" title="点这里可以下载网站的安卓APP" class="anno_content"><font color="#5ea6e5">点此下载</font></a>🍧</b></center>
+    content: <center><b>--- 主域名 ---<br><a href="https://www.fomal.cc" title="此线路部署于Vercel" class="anno_content"><font color="#5ea6e5">fomal.cc</font></a>&nbsp;|&nbsp;<a href="https://www.fomal.cn" title="此线路部署于Vercel" class="anno_content"><font color="#5ea6e5">fomal.cn</font></a><br>--- 备用域名 ---<br><a href="https://netlify.fomal.cc" title="此线路部署于Netlify" class="anno_content"><font color="#5ea6e5">netlify.fomal.cc</font></a><br><a href="https://cloudflare.fomal.cc" title="此线路部署于Cloudflare" class="anno_content"><font color="#5ea6e5">cloudflare.fomal.cc</font></a><br>--- 网站安卓APP ---<br>🍧<a href="" title="点这里可以下载网站的安卓APP" class="anno_content"><font color="#5ea6e5">点此下载</font></a>🍧</b></center>
   card_recent_post:
     enable: false
     limit: 3 # if set 0 will show all
