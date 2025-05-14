@@ -18,7 +18,7 @@ abbrlink:
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: https://www.fomal.cc/
+url: http://47.94.225.108:4000/   #https://www.fomal.cc/
 permalink: posts/:abbrlink.html
 permalink_defaults:
 pretty_urls:
@@ -276,7 +276,7 @@ magnet:
     - name: 计算机基础
       display_name: 小Fの计算机基础笔记
       icon: 🍼
-    - name: 魔改教程
+    - name: 大麦项目
       display_name: 小Fの博客魔改教程
       icon: 🍉
     - name: Java基础
