@@ -50,7 +50,7 @@ date: 2025-05-15 11:44:47
 
 # 4.shardingsphere核心概念
 
-![](https://s1.vika.cn/space/2025/05/15/207724edba014305867ce3271528f2ed)
+![](/vika-proxy/space/2025/05/15/207724edba014305867ce3271528f2ed)
 
 
 
