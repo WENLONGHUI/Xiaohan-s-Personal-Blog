@@ -967,8 +967,10 @@ CDN:
     # canvas_ribbon:
     # canvas_fluttering_ribbon:
     # canvas_nest:
-    lazyload: https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/vanilla-lazyload/17.3.1/lazyload.iife.min.js
-    instantpage: https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/instant.page/5.1.0/instantpage.min.js
+    # lazyload: https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/vanilla-lazyload/17.3.1/lazyload.iife.min.js
+    lazyload: https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.3.1/dist/lazyload.iife.min.js
+    # instantpage: https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/instant.page/5.1.0/instantpage.min.js
+    instantpage: https://cdn.jsdelivr.net/npm/instant.page@5.1.0/instantpage.min.js
     typed: https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/typed.js/2.0.12/typed.min.js
     # pangu:
     fancybox_css_v4: https://cdn.staticfile.org/fancyapps-ui/4.0.31/fancybox.min.css
